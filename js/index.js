@@ -1,191 +1,148 @@
-// const value = 15;
-// const isMonday = false;
-// let result = 0;
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-// if (value >= 10 && isMonday) {
-//     // console.log('is good enough')
-//     result = 3
-// } else {
-//     result = 1;
+// numbers[4] = "abba"
+// numbers[7] = "fruit"
+// numbers[10] = 123
+// numbers[11] = 1
+
+// numbers.push(5)
+// numbers.in
+// numbers.pop()
+
+// for (let i = 0; i < numbers.length; i++) {
+//     // console.log()
+//     console.log({i, number: numbers[i]})
 // }
 
-// console.log(result)
+// const lastElementIndex = numbers.length - 1;
 
-// let score = 42;
-// let result = ''
+// console.log(numbers[lastElementIndex])
 
-// if (score >= 10 && score < 20) {
-//     result = '2'
-// } else if (score >= 20 && score < 30) {
-//     result = '3'
-// } else if (score >= 30 && score < 40) {
-//     if (score > 35) {
-//         result = '4.5'
-//     } else {
-//         result = '4'
-//     }
-// } else if (score >= 40) {
-//     result = '5'
-// } else {
-//     result = '1'
+// const first = [1, 2, 3, [4, 5, 6, [7, 8, 9]]]
+
+// console.log(first)
+
+// const latLangs = [[14, 27], [88, 34], [22, 15], [44, 22]]
+
+
+
+// for (const number of numbers) {
+//     console.log(number)
 // }
 
-// if (score > 10 && 1 < 5 || (true || !false)) {
-//     result++;
+// const someString = 'goit2023';
+
+// for (const char of someString) {
+//     console.log(char)
 // }
 
-// if (true) {
-//     result += 5;
-// }
 
-// if (false) {
+// const colors = ['Red', 'Blue', 'Green', 'White', 'Yellow', 'Purple']
+// const colorToFind = 'Yellow';
 
-// } else {
-//     result++;
-// }
-
-// console.log(result)
-
-// let type;
-// const age = 20;
-
-// if (age >= 18) {
-//     // var a = 5;
-//     type = "adult"
-// } else {
-//     type = "child"
-// }
-
-// // console.log(a)
-
-// const isMonday = true
-// const isBoliwia = false
-// const someValue = undefined;
-// const defaultValue = 2;
-
-// const isAdult = age >= 18 && isMonday || isBoliwia
-// // const someProp = isMonday && 5;
-
-// const resultValue = someValue || defaultValue
-
-// const newType = isAdult ? "adult" : "child"
-
-// const newType = isAdult ? "adult" : isMonday ? "still adult" : "child"
-
-// let score = 42;
-// let result = ''
-
-// if (score >= 10 && score < 20) {
-//     result = '2'
-// } else if (score >= 20 && score < 30) {
-//     result = '3'
-// } else if (score >= 30 && score < 40) {
-//     if (score > 35) {
-//         result = '4.5'
-//     } else {
-//         result = '4'
-//     }
-// } else if (score >= 40) {
-//     result = '5'
-// } else {
-//     result = '1'
-// }
-
-// let cost;
-// const subscriptionType = 'abba';
-
-// switch(subscriptionType) {
-//     case "free":
-//         cost = 0;
-//         break;
-//     case "pro":
-//         cost = 100;
-//         break;
-//     case "premium":
-//         cost = 500;
-//         break;
-//     default:
-//         cost = 999
-// }
-
-// console.log(cost)
-
-
-// const outerValue = 2;
-// let globalScope;
-
-// if (true) {
-//     let blockScopeA = 4;
-
-//     if (true) {
-//         const blockScopeB = 3;
-//         globalScope = 6;
-//         console.log(blockScopeA)
-//         // console.log({innerValue, outerValue, moreInnerValue})
+// for (const color of colors) {
+//     if (color === colorToFind) {
+//         // break;
+//         // continue;
 //     }
 
-//     console.log(blockScopeA)
-//     // console.log({innerValue, outerValue, moreInnerValue})
+//     console.log('Searching')
 // }
 
-// if (true) {
-//     // let innerValue = 14;
-//     // const blockScopeC = "abba"
-//     // console.log(blockScopeA)
+// const numberToDivide = 3;
 
-//     const someProp = 5;
-//     console.log(someProp)
-
-//     const otherProp = 11;
-//     console.log(someProp, otherProp)
-// }
-
-// // console.log(blockScopeA)
-// // console.log({innerValue, outerValue, moreInnerValue})
-
-// let lap = 5;
-// let doWhileLap = 5;
-// let shouldKeepGoing = false
-// let shouldKeepGoingDoWhile = false
-
-// while (shouldKeepGoing) {
-//     console.log(lap)
-    
-//     if (lap === 3) {
-//         shouldKeepGoing = false;
+// for (const number of numbers) {
+//     if (number % numberToDivide === 0) {
+//         console.log(number)
+//         continue;
 //     }
 
-//     lap--
+//     console.log(`Number ${number} is not divided by ${numberToDivide}`)
 // }
 
-// do {
-//     console.log(doWhileLap)
-    
-//     if (doWhileLap === 3) {
-//         shouldKeepGoingDoWhile = false;
-//     }
 
-//     doWhileLap--
-// } while (shouldKeepGoingDoWhile)
+// const array = []
 
-// for (let lap = 5; lap !== 3; lap--) {
-//     console.log(lap)
+// for (let i = 0; i < 1000; i++) {
+//     array.push(i)
 // }
 
-const zoomParticipantNumber = 33;
 
-for (let i = 1; i < 33; i += 2) {
-    const a = 5;
+// const withoutSpace = "Mango"
+// const withSpace = "Mango is good but not so good"
+// const arrayNames = ['Mango', 'is', 'good', 'but', 'not', 'so', 'good']
+// const fruit = 'Banana'
+// const numbersNew = [1, 2, 3, 4, 5]
 
-    if (i === 13) {
-        const b = 4;
-        console.log('UPS')
-        break; // i = 33
-    }
+// console.log(withoutSpace.split(""))
+// console.log(withSpace.split(" "))
 
-    if (i % 3 !== 0) {
-        continue;
-    }
+// console.log(arrayNames.join("TEST"))
 
-    console.log(`Hello only for odd numbers: ${i}`)
-}
+// console.log(arrayNames.indexOf("good"))
+// console.log(arrayNames.includes("good"))
+
+// console.log(arrayNames.indexOf("abba"))
+// console.log(arrayNames.includes("abba"))
+
+// if (arrayNames.indexOf('Mango') > -1) {
+
+// }
+
+// if (fruit === 'Apple' || fruit === 'Mango' || fruit === 'Cherry') { 
+//     console.log('it is!')
+// }
+
+// const fruits = ['Apple', 'Mango', 'Cherry'];
+// const hasFruit = fruits.includes(fruit)
+
+// if (hasFruit) {
+//     console.log (`${fruit} is a fruit`)
+// }
+
+// numbers.slice()
+
+// const numbers = []
+
+// numbers.push(1)
+// console.log(numbers)
+
+// numbers.push(2)
+// console.log(numbers)
+
+// numbers.push(3, 4, 5, 6, 7)
+// console.log(numbers)
+
+// numbers.unshift(0)
+// console.log(numbers)
+
+// numbers.pop()
+// console.log(numbers)
+
+// console.log(numbers.pop())
+// console.log(numbers)
+
+// numbers.shift()
+// console.log(numbers)
+
+// numbers.splice(0, 1)
+// console.log(numbers)
+
+// const firstNumbers = [1, 3, 5, 7, 88]
+// const secondNumbers = [2, 4, 6, 77, 1, 3, 5]
+
+// const firstThenSecond = firstNumbers.concat(secondNumbers)
+// const secondThenFirst = secondNumbers.concat(firstNumbers)
+
+// console.log(firstThenSecond)
+// console.log(secondThenFirst)
+// console.log(firstNumbers)
+// console.log(secondNumbers)
+
+let some = [5];
+const arrayWithSome = [1, 2, some, 4]
+// reference
+
+let some2 = 5;
+const arrayWithSome2 = [1, 2, [some], 4]
+// copy
