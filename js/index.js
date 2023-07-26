@@ -1,148 +1,256 @@
-// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-// numbers[4] = "abba"
-// numbers[7] = "fruit"
-// numbers[10] = 123
-// numbers[11] = 1
-
-// numbers.push(5)
-// numbers.in
-// numbers.pop()
-
-// for (let i = 0; i < numbers.length; i++) {
-//     // console.log()
-//     console.log({i, number: numbers[i]})
+// function sum(first, second) {
+//     const result = first + second;
+//     console.log(result)
+//     return result
 // }
 
-// const lastElementIndex = numbers.length - 1;
-
-// console.log(numbers[lastElementIndex])
-
-// const first = [1, 2, 3, [4, 5, 6, [7, 8, 9]]]
-
-// console.log(first)
-
-// const latLangs = [[14, 27], [88, 34], [22, 15], [44, 22]]
-
-
-
-// for (const number of numbers) {
-//     console.log(number)
+// function helloWorld() {
+//     console.log('Hello World')
 // }
 
-// const someString = 'goit2023';
-
-// for (const char of someString) {
-//     console.log(char)
+// function doSomething(first, second, callback) {
+//     //do something important
+//     callback()
 // }
 
+// doSomething(1, 2, function () {
+//     console.log('123')
+// })
 
-// const colors = ['Red', 'Blue', 'Green', 'White', 'Yellow', 'Purple']
-// const colorToFind = 'Yellow';
 
-// for (const color of colors) {
-//     if (color === colorToFind) {
-//         // break;
-//         // continue;
+// sum(1, 2)
+// sum(5, 8)
+// sum(13, 22)
+
+// const second = 5;
+// const first = 7;
+// sum(second, first)
+
+// const result = sum(4, 7)
+// const result = sum('abba', false)
+// console.log(result)
+
+// helloWorld()
+// helloWorld()
+// const response = helloWorld()
+// console.log(response)
+
+// function someAwesomeFunction(one, two, three = 5) {
+
+
+// function someAwesomeFunction(one, two, three) {
+//     console.log({one, two, three})
+
+//     // if (!loginValue || !passwordValue) {
+//     //     return;
+//     // }
+
+
+//     return one * two * three
+
+//     console.log('NOPE')
+// }
+
+// someAwesomeFunction()
+// someAwesomeFunction(1)
+// someAwesomeFunction(1, 2)
+// const result = someAwesomeFunction(1, 2, 3)
+// console.log(result)
+// someAwesomeFunction(1, 2, 3, 4)
+
+
+// console.log('some first')
+
+// function divide(first, second) {
+//     console.log('function')
+//     return first / second
+// }
+
+// console.log('some second')
+// console.log(divide(10, 2))
+// console.log('some third')
+
+
+// function count(countFrom = 0, countTo = 10, step = 1) {
+//     for(let i = countFrom; i <= countTo; i += step) {
+//         console.log(i)
+//     }
+// }
+
+// count(4, 20, 2)
+
+// function multiply() {
+//     let total = 1;
+//     const someArray = [1, 2, 3]
+
+//     // const args = Array.from(arguments)
+//     const args = [...arguments]
+
+//     console.log(arguments);
+//     console.log(someArray);
+//     console.log(args)
+
+//     for (const argument of arguments) {
+//         total *= argument
 //     }
 
-//     console.log('Searching')
+//     return total;
 // }
 
-// const numberToDivide = 3;
+// console.log(multiply())
+// console.log(multiply(2, 5))
+// console.log(multiply(1, 2, 3, 4, 5))
 
-// for (const number of numbers) {
-//     if (number % numberToDivide === 0) {
-//         console.log(number)
-//         continue;
+// function check(operator, ...argumentsFromMyAwesomeFunction) {
+//     console.log(operator)
+//     console.log(argumentsFromMyAwesomeFunction)
+// }
+
+// check('add', 2, 3, 4)
+// check('remove', 7, 2)
+
+
+// function checkScore(points, minimumToPass) {
+//     if (points > minimumToPass) {
+//         console.log('Brawo, zdałaś/eś');
+//     } else if (points === minimumToPass) {
+//         console.log('Zapraszam na dopytkę')
+//     } else {
+//         console.log('Ups poprawka')
+//     }
+// }
+
+// function checkScore(points, minimumToPass) {
+//     let result;
+//     if (!points || !minimumToPass) {
+//         return result;
 //     }
 
-//     console.log(`Number ${number} is not divided by ${numberToDivide}`)
+//     if (points > minimumToPass) {
+//         console.log('Brawo, zdałaś/eś');
+//         result = 5
+//         return result;
+//     }
+
+//     if (points === minimumToPass) {
+//         console.log('Zapraszam na dopytkę')
+//         return 'abba'
+//     }
+
+//     console.log('Ups poprawka')
 // }
 
+// checkScore()
+// checkScore(70, 50)
+// checkScore(50, 50)
+// checkScore(30, 50)
 
-// const array = []
+// sum(2, 4)
+// sum1(2, 4)
 
-// for (let i = 0; i < 1000; i++) {
-//     array.push(i)
+// function sum(first, second) {
+//     return first + second
 // }
 
+// // const sum1 = function(first, second) {
+// //     return first + second;
+// // }
 
-// const withoutSpace = "Mango"
-// const withSpace = "Mango is good but not so good"
-// const arrayNames = ['Mango', 'is', 'good', 'but', 'not', 'so', 'good']
-// const fruit = 'Banana'
-// const numbersNew = [1, 2, 3, 4, 5]
+// const sum2 = (first, second) => {
+//     return first + second;
+// }
 
-// console.log(withoutSpace.split(""))
-// console.log(withSpace.split(" "))
+// sum(2, 4)
+// sum1(2, 4)
 
-// console.log(arrayNames.join("TEST"))
+// const globalValue = 10;
 
-// console.log(arrayNames.indexOf("good"))
-// console.log(arrayNames.includes("good"))
+// console.log(globalValue);// 10
 
-// console.log(arrayNames.indexOf("abba"))
-// console.log(arrayNames.includes("abba"))
+// function foo() {
+//   console.log(globalValue);// 10
+// }
 
-// if (arrayNames.indexOf('Mango') > -1) {
+// for (let i = 0; i < 5; i++) {
+//   console.log(globalValue);// 10
+
+//   if (i === 2) {
+//     console.log(globalValue);// 10
+//   }
+// }
+
+// function foo() {
+//     const a = 20;
+//     console.log(a);// 20
+  
+//     for (let i = 0; i < 5; i++) {
+//       console.log(a);// 20
+  
+//       if (i === 2) {
+//         console.log(a);// 20
+//       }
+//     }
+// }
+  
+//   // ❌ Błąd! Zmienna a nie jest dostępna w zakresie globalnym
+// console.log(a);
+  
+// for (let i = 0; i < 3; i++) {
+//   // ❌ Błąd! Zmienna a nie jest dostępna w tym zakresie
+//     console.log(a);
+// }
+
+// function secondAdd() {
 
 // }
 
-// if (fruit === 'Apple' || fruit === 'Mango' || fruit === 'Cherry') { 
-//     console.log('it is!')
+// function add(first, second) {
+//     console.log('begin add')
+//     console.log('end add')
 // }
 
-// const fruits = ['Apple', 'Mango', 'Cherry'];
-// const hasFruit = fruits.includes(fruit)
-
-// if (hasFruit) {
-//     console.log (`${fruit} is a fruit`)
+// function multiplyThenAdd(first, second) {
+//     console.log('begin multiplyThenAdd')
+       
+//     add(first, second)
+//     secondAdd(first, second, 'abba')
+//     // ->
+//     //    console.log('begin add')
+//     //    console.log('end add')
+//     console.log('end multiplyThenAdd')
 // }
 
-// numbers.slice()
+// console.log('begin stack')
+// multiplyThenAdd(2, 10)
+// console.log('end stack')
 
-// const numbers = []
+// function bar() {
+//   console.log("bar");
+// }
 
-// numbers.push(1)
-// console.log(numbers)
+// function baz() {
+//   console.log("baz");
+// }
 
-// numbers.push(2)
-// console.log(numbers)
+// function foo() {
+//   console.log("foo");
+//   bar();
+//   baz();
+// }
 
-// numbers.push(3, 4, 5, 6, 7)
-// console.log(numbers)
+// foo();
 
-// numbers.unshift(0)
-// console.log(numbers)
 
-// numbers.pop()
-// console.log(numbers)
+// function foo() {
+//   bar()
+// }
 
-// console.log(numbers.pop())
-// console.log(numbers)
+// function bar() {
+//   foo()
+// }
 
-// numbers.shift()
-// console.log(numbers)
+// foo()
 
-// numbers.splice(0, 1)
-// console.log(numbers)
-
-// const firstNumbers = [1, 3, 5, 7, 88]
-// const secondNumbers = [2, 4, 6, 77, 1, 3, 5]
-
-// const firstThenSecond = firstNumbers.concat(secondNumbers)
-// const secondThenFirst = secondNumbers.concat(firstNumbers)
-
-// console.log(firstThenSecond)
-// console.log(secondThenFirst)
-// console.log(firstNumbers)
-// console.log(secondNumbers)
-
-let some = [5];
-const arrayWithSome = [1, 2, some, 4]
-// reference
-
-let some2 = 5;
-const arrayWithSome2 = [1, 2, [some], 4]
-// copy
+// while(true) {
+//   foo()
+// }
