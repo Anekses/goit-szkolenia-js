@@ -1,256 +1,230 @@
-// function sum(first, second) {
-//     const result = first + second;
-//     console.log(result)
-//     return result
+// const title = 'Harry Potter'
+// const author = 'J.K. Rowling'
+// const isPublic = true
+// const rating = 9.2
+
+// const book = {
+//   title: 'Harry Potter',
+//   author: 'J.K. Rowling',
+//   isPublic: true,
+//   rating: 9.2,
+//   genres: ['awesome', 'good to read'],
+//   publishingInfo: {
+//     year: 1994,
+//     numberOfPages: 316,
+//     isAwesome: true
+//   }
+//   // someObject: {
+//   //   a: 1,
+//   //   b: "2",
+//   //   c: false,
+//   //   d: {
+//   //     e: 2,
+//   //     f: 'abba'
+//   //   }
+//   // },
+//   // "test something": '123',
+//   // "_id": 123,
 // }
 
-// function helloWorld() {
-//     console.log('Hello World')
+// const user1 = {
+//   name: 'Tomasz'
 // }
 
-// function doSomething(first, second, callback) {
-//     //do something important
-//     callback()
+// const user2 = {
+//   name: 'Asia'
 // }
 
-// doSomething(1, 2, function () {
-//     console.log('123')
-// })
-
-
-// sum(1, 2)
-// sum(5, 8)
-// sum(13, 22)
-
-// const second = 5;
-// const first = 7;
-// sum(second, first)
-
-// const result = sum(4, 7)
-// const result = sum('abba', false)
-// console.log(result)
-
-// helloWorld()
-// helloWorld()
-// const response = helloWorld()
-// console.log(response)
-
-// function someAwesomeFunction(one, two, three = 5) {
-
-
-// function someAwesomeFunction(one, two, three) {
-//     console.log({one, two, three})
-
-//     // if (!loginValue || !passwordValue) {
-//     //     return;
-//     // }
-
-
-//     return one * two * three
-
-//     console.log('NOPE')
+// const user3 = {
+//   name: 'Marcin'
 // }
 
-// someAwesomeFunction()
-// someAwesomeFunction(1)
-// someAwesomeFunction(1, 2)
-// const result = someAwesomeFunction(1, 2, 3)
-// console.log(result)
-// someAwesomeFunction(1, 2, 3, 4)
+// const users = [user1, user2, user3]
 
-
-// console.log('some first')
-
-// function divide(first, second) {
-//     console.log('function')
-//     return first / second
+// for (let i = 0; i < users.length; i++) {
+//   console.log(users[i].name)
 // }
 
-// console.log('some second')
-// console.log(divide(10, 2))
-// console.log('some third')
+// function createObject() {
 
+// }
 
-// function count(countFrom = 0, countTo = 10, step = 1) {
-//     for(let i = countFrom; i <= countTo; i += step) {
-//         console.log(i)
+// const user4 = createObject()
+
+// if (...) {
+
+// }
+
+// const myBook = {
+//   title: 42132,
+//   company: 'lego',
+//   qrcode: "abba",
+//   pages: [
+//     {
+//       id: 1, 
+//       imageUrl: 'someUrl',
+//       numberOfPartsRequired: [1, 2, 17]
 //     }
-// }
-
-// count(4, 20, 2)
-
-// function multiply() {
-//     let total = 1;
-//     const someArray = [1, 2, 3]
-
-//     // const args = Array.from(arguments)
-//     const args = [...arguments]
-
-//     console.log(arguments);
-//     console.log(someArray);
-//     console.log(args)
-
-//     for (const argument of arguments) {
-//         total *= argument
-//     }
-
-//     return total;
-// }
-
-// console.log(multiply())
-// console.log(multiply(2, 5))
-// console.log(multiply(1, 2, 3, 4, 5))
-
-// function check(operator, ...argumentsFromMyAwesomeFunction) {
-//     console.log(operator)
-//     console.log(argumentsFromMyAwesomeFunction)
-// }
-
-// check('add', 2, 3, 4)
-// check('remove', 7, 2)
-
-
-// function checkScore(points, minimumToPass) {
-//     if (points > minimumToPass) {
-//         console.log('Brawo, zdałaś/eś');
-//     } else if (points === minimumToPass) {
-//         console.log('Zapraszam na dopytkę')
-//     } else {
-//         console.log('Ups poprawka')
-//     }
-// }
-
-// function checkScore(points, minimumToPass) {
-//     let result;
-//     if (!points || !minimumToPass) {
-//         return result;
-//     }
-
-//     if (points > minimumToPass) {
-//         console.log('Brawo, zdałaś/eś');
-//         result = 5
-//         return result;
-//     }
-
-//     if (points === minimumToPass) {
-//         console.log('Zapraszam na dopytkę')
-//         return 'abba'
-//     }
-
-//     console.log('Ups poprawka')
-// }
-
-// checkScore()
-// checkScore(70, 50)
-// checkScore(50, 50)
-// checkScore(30, 50)
-
-// sum(2, 4)
-// sum1(2, 4)
-
-// function sum(first, second) {
-//     return first + second
-// }
-
-// // const sum1 = function(first, second) {
-// //     return first + second;
-// // }
-
-// const sum2 = (first, second) => {
-//     return first + second;
-// }
-
-// sum(2, 4)
-// sum1(2, 4)
-
-// const globalValue = 10;
-
-// console.log(globalValue);// 10
-
-// function foo() {
-//   console.log(globalValue);// 10
-// }
-
-// for (let i = 0; i < 5; i++) {
-//   console.log(globalValue);// 10
-
-//   if (i === 2) {
-//     console.log(globalValue);// 10
+//   ],
+//   author: {
+//     name: 'Johny'
 //   }
 // }
 
-// function foo() {
-//     const a = 20;
-//     console.log(a);// 20
+// const paramName = 'title'
+
+// const someParam = myBook.title
+
+// myBook.title = '84829'
+// myBook.author.age = 25
+// myBook.author = ''
+// myBook[paramName] = 'abba'
+
+// console.log(myBook.title) // 84.99%
+// console.log(myBook["title"]) // 0.01%
+// console.log(myBook[paramName]) // 15%
+
+// console.log(myBook.author.name)
+
+// const name = 'Wojciech'
+// const lastName = 'Niemczyk'
+// const age = 96
+
+// const user = {
+//   name, // -> name: name
+//   age, // -> age: age
+//   lastName,
+//   // getFullName() {
+//   //   return `${name} - ${lastName}, hello!`
+//   // }
+// }
+
+// function getFullName(name, lastName) {
+//   return `${name} - ${lastName}, hello!`
+// }
+
+// console.log(user)
+// // console.log(user.getFullName())
+// console.log(getFullName(user.name, user.lastName))
+
+// const books = [1, 2, 3, 4]
+
+// // bookShelfList.push({
+// const bookShelf = {
+//   books: ["The Last Kingdom"],
+//   users: ['Mariusz', 'Wojciech'],
   
-//     for (let i = 0; i < 5; i++) {
-//       console.log(a);// 20
+//   getBooks() {
+//     console.log(this.books)
+//   },
   
-//       if (i === 2) {
-//         console.log(a);// 20
-//       }
-//     }
+//   addBook(bookName) {
+//     this.books.push(bookName)
+//   },
 // }
-  
-//   // ❌ Błąd! Zmienna a nie jest dostępna w zakresie globalnym
-// console.log(a);
-  
-// for (let i = 0; i < 3; i++) {
-//   // ❌ Błąd! Zmienna a nie jest dostępna w tym zakresie
-//     console.log(a);
-// }
+// // )
 
-// function secondAdd() {
+// // bookShelf.books;
+// bookShelf.getBooks()
 
-// }
+// bookShelf.addBook('Harry Potter 1')
+// bookShelf.addBook('Harry Potter 2')
 
-// function add(first, second) {
-//     console.log('begin add')
-//     console.log('end add')
-// }
+// bookShelf.getBooks()
 
-// function multiplyThenAdd(first, second) {
-//     console.log('begin multiplyThenAdd')
-       
-//     add(first, second)
-//     secondAdd(first, second, 'abba')
-//     // ->
-//     //    console.log('begin add')
-//     //    console.log('end add')
-//     console.log('end multiplyThenAdd')
+// const book = {
+//   title: "Harry Potter 3",
+//   author: 'J.K. Rowling',
+//   genres: ['adventure', 'awesome'],
+//   rating: 9.2,
+//   isPublic: true,
 // }
 
-// console.log('begin stack')
-// multiplyThenAdd(2, 10)
-// console.log('end stack')
-
-// function bar() {
-//   console.log("bar");
+// const book2 = {
+//   title: 'Harry Potter 4'
 // }
 
-// function baz() {
-//   console.log("baz");
+// for (const key in book) {
+//   if (book.hasOwnProperty(key)) {
+//     console.log(key, book[key])
+//   }
+//   // console.log(book[key])
 // }
 
-// function foo() {
-//   console.log("foo");
-//   bar();
-//   baz();
+// if (book2.hasOwnProperty('author')) {
+//   console.log(book2.author)
+// } else {
+//   console.log(book.author)
 // }
 
-// foo();
+// const keys = Object.keys(book)
+// const values = Object.values(book)
+// const entires = Object.entries(book)
 
+// // for (const key of keys) {
+// //   console.log(key, book[key])
+// // }
 
-// function foo() {
-//   bar()
+// console.log(keys)
+// console.log(values)
+// console.log(entires)
+
+// const goods = {
+//   apples: 6,
+//   bread: 3,
+//   cheese: 7
 // }
 
-// function bar() {
-//   foo()
+// const valuesOfGoods = Object.values(goods);
+
+// let total = 0;
+
+// for (const value of valuesOfGoods) {
+//   total += value;
 // }
 
-// foo()
+// console.log(total)
 
-// while(true) {
-//   foo()
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "Sen śmiesznego człowieka",
+    author: "Fiodor Dostojewski",
+    rating: 7.75,
+  },
+];
+
+// for (let i = 0; i < books.length; i++) {
+//   const currentBook = books[i]
+//   console.log(currentBook)
 // }
+
+// for (const book of books) {
+//   console.log(book)
+// }
+
+// books.forEach((book) => {
+//   console.log(book)
+// })
+
+let totalRating = 0;
+
+for (const book of books) {
+  totalRating += book.rating
+}
+
+const avgRating = (totalRating / books.length).toFixed(1)
+console.log(avgRating)
+
+// Object.create()
+
+const someObjectMyAwesome = {}
