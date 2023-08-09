@@ -1,215 +1,279 @@
-// // const someArrayWithNumbers = [1, 2, 13, 4, -89, 4, 46, 27]
-// // // console.log(someArrayWithNumbers)
-// // // console.log(...someArrayWithNumbers)
+// // foo(logger(5)) -> wartość
+// // foo(logger) -> callback
 
-// // // console.log(someArrayWithNumbers)
-
-// // // console.log(Math.max(...someArrayWithNumbers))
-
-// // // Math.max(...[1, 2, 13, 4]) -> Math.max(1, 2, 13, 4)
-
-// // const copyOfArray = [...someArrayWithNumbers]
-// // // const copyOfArray2 = someArrayWithNumbers
-
-// // const otherArrayAsWell = [6, 76, 8]
-// // const secondCopyOfArray = [...someArrayWithNumbers, ...otherArrayAsWell]
-
-// // const firstObj = { name: 'Bartek', age: 25}
-// // const secondObj = { whatDoOnWednesdayEvening: 'learning'}
-
-// // console.log(firstObj, secondObj)
-
-// // const thirdObj = { age: 30, ...firstObj, ...secondObj, isHePlayingGuitar: false, }
-
-// // console.log(thirdObj)
-
-// // const baseRequest = {
-// //   nationality: 'Poland'
+// // function foo(callback) {
+// //   callback(5)
 // // }
 
-// // const requestToBackend = {
-// //   ...baseRequest,
-// //   nationality: 'Czech'
-// // }
 
-// // const obj123 = {
-// //   a: 1,
-// //   b: 2,
-// //   c: 3
-// // }
-
-// // console.log(obj123)
-// // console.log({...obj123})
-
-// // function multiply(isUpdate, ...args) {
-// //   isUpdate ? invokeFirstFunction(args) : invokeOfSomeAwesomeFunction(args)
-// // }
-
-// // multiply(true, 1, 2)
-// // multiply(false, 1, 2, 3)
-// // multiply(1, 2, 3, 4)
-
-// const book = {
-//   title: 'Harry Potter 6',
-//   author: 'J.K. Rowling',
-//   genres: ['adventure', 'somethingAwesome'],
-//   isPublic: true,
-//   rating: 9.2
+// function logThis(callback) {
+//   callback(12) -> console.log(12)
 // }
 
-// const book2 = {
-//   title: 'Harry Potter 6',
-//   author: 'J.K. Rowling',
-//   genres: ['adventure', 'somethingAwesome'],
-//   isPublic: true,
-//   rating: 9.2,
-//   coverImage: 'abba'
+// function callbackLogThis(value) {
+//   console.log(value)
+//   return console.log;
 // }
 
-// // const accessType = book.isPublic ? "publiczny" : "zamknięty";
-// // const message = `Książka ${book.title} autorstwa ${book.author} z oceną ${book.rating} ma dostęp ${accessType}`
+// logThis(callbackLogThis) -> console.log(12)
+// logThis(callbackLogThis(5)) -> console.log(5)
 
-// const title = 'This is title for whole page!';
-
-// const { 
-//   title: firstTitle, 
-//   author: firstAuthor = 'not J.K. Rowling anymore', 
-//   isPublic, 
-//   rating, 
-//   coverImage = 'https://google.com' 
-// } = book;
-// // ->
-// // const title = book.title; -> const firstTitle = book.title
-// // const author = book.author;
-// // const isPublic = book.isPublic;
-// // const rating = book.rating;
-// // const coverImage = book.coverImage || 'https://google.com'
-
-// const accessType = isPublic ? "publiczny" : "zamknięty";
-// const message = 
-//   `Książka ${firstTitle} autorstwa ${firstAuthor} z oceną ${rating} ma dostęp ${accessType}, a ich cover image to: ${coverImage}`
-
-// console.log(message)
-// console.log(book.coverImage)
-
-// // console.log(title, author, isPublic, rating)
-
-
-// const books = [
-//   {
-//     title: "The Last Kingdom",
-//     author: "Bernard Cornwell",
-//     rating: 8.38,
-//     stats: {
-//       pages: 123,
-//       buyers: 15,
-//     }
-//   },
-//   {
-//     title: "Beside Still Waters",
-//     author: "Robert Sheckley",
-//     rating: 8.51,
-//     stats: {
-//       pages: 85496,
-//       buyers: 34895
-//     }
-//   },
-// ];
-
-// // for (const { title, author, rating } of books) {
-// for (const book of books) {
-//   const { 
-//     title, 
-//     author, 
-//     rating, 
-//     stats: { 
-//       pages, 
-//       buyers 
-//     } 
-//   } = book;
-//   // const { pages, buyers } = stats;
-
-//   console.log(title)
-//   console.log(author)
-//   console.log(rating)
-//   console.log(pages)
-//   console.log(buyers)
-
-//   // console.log(book.title)
-//   // console.log(book.author)
-//   // console.log(book.rating)
+// //explicit
+// const add = (a, b) => {
+//   return a + b;
 // }
 
-// const rgb = [80, 234, 79, 0.98]
-// const [red, green, blue, alfa = 0.3] = rgb;
+// //implicit
+// const add = (a, b) => a + b
 
-// const [red, green, ...colors] = rgb;
+// const add = (...args)
 
-// console.log(red, green, colors)
-// console.log(red, green, blue, alfa)
+// const log = console.log
 
-// const [, , blue] = rgb
+// const log = (x) => console.log(x)
 
-// console.log(blue)
+// log(44) -> console.log(44)
+// log(44) -> 44 => console.log(44)
 
-// const rgbObj = { red: 80, green: 234, blue: 79}
-// const {red: redObj, green: greenObj, blue: blueObj} = rgbObj
 
-// console.log(red, green, blue, redObj, greenObj, blueObj)
+// Pure Function = Czysta Funkcja
 
-// function multiply(first, second) {
-//   return first * second
+// const someFunc = () => {}
+
+// const someDirtyFunc = () = {
+//   someFunc()
 // }
 
-// multiply(7, 5)
+// dirtyMultiply([1, 2, 3], 4) -> [4, 8, 12]
 
-const books = [];
-
-function createBookOld(title, statsBuyers, statsPages, downloads, isPublic, author) {
-  const book = {
-    title, statsBuyers, statsPages, downloads, isPublic, author
-  }
-  books.push(book)
-}
-
-createBookOld('Harry Potter 7', 34534, 1231, 543543, true, 'J.K')
-
-// ---------------------
-
-// function createBookNew(book) {
-//   if (book.title) {
-//     books.push(book)
+// const dirtyMultiply = (array, value) => {
+//   for (let i = 0; i < array.length; i++) {
+//     array[i] *= value; // array[i] = array[i] * value
 //   }
 // }
 
-function createBookNew(book) {
-  const { author: newAuthor, title, stats, isPublic = 'test'} = book;
-  books.push({
-    newAuthor,
-    title,
-    stats,
-    isFinished: isPublic
-  })
-}
+// const pureMultiply = (array, value) => {
+//   const newArray = [];
 
-// function createBookNew({ author, title, stats, isPublic}) {
-//   // const { author, title, stats, isPublic} = book;
-//   books.push({
-//     author,
-//     title,
-//     stats,
-//     isFinished: isPublic
-//   })
+//   for (let i = 0; i < array.length; i++) {
+//     const newValue = array[i] * value;
+//     newArray.push(newValue)
+//   }
+
+//   return newArray
 // }
 
-createBookNew({
-  author: 'J.K',
-  title: 'Harry nie-Potter',
-  stats: {
-    buyers: 12,
-    pages: 543
-  },
-  isPublic: false
-})
+// const numbers = [5, 10, 15, 20]
+// const multiply = 3
 
-console.log(books)
+// console.log(numbers)
+
+// const result = pureMultiply(numbers, multiply)
+// // dirtyMultiply(numbers, multiply)
+
+// console.log(numbers)
+// console.log(result)
+
+// const numbers = [5, 10, 15, 20]
+
+// numbers."method"((currentValue, index, originalArray) => {
+//   // 5 / 0 / [5, 10, 15, 20]
+//   // 10 / 1 / [5, 10, 15, 20]
+//   // 15 / 2 / [5, 10, 15, 20]
+//   // 20 / 3 / [5, 10, 15, 20]
+// })
+
+// const planets = ['Ziemia', 'Mars', 'Wenus', 'Jowisz'];
+
+// const planetsInLowerCase = planets.map((planet) => {
+//   return planet.toLowerCase()
+// })
+
+// const forEachResult = planets.forEach((planet) => {
+//   return planet.toLowerCase()
+// })
+
+// console.log({planets, planetsInLowerCase, forEachResult})
+
+// const students = [
+//   { name: "Mango", score: 83, courses: ["matematyka", "fizyka"] },
+//   { name: "Poly", score: 59, courses: ["informatyka", "fizyka"] },
+//   { name: "Ajax", score: 37, courses: ["matematyka", "biologia"] },
+//   { name: "Kiwi", score: 94, courses: ["polski"] },
+//   // { name: "Houston", score: 64, courses: [{ some: []}, [1, 2]] },
+// ];
+
+// const names = students.map(student => student.name)
+// console.log(names)
+
+// const passedNames = students.map((student) => {
+//   if (student.score > 60) {
+//     return student.name
+//   }
+// })
+
+// console.log(passedNames)
+
+// const passedNamesFiltered = passedNames.filter(x => x)
+
+// console.log(passedNamesFiltered)
+
+// [...planets] - [...students]
+
+// const studentsMap = students.map(student => student.courses)
+// const studentsFlatMap = students.flatMap(student => student.courses)
+// const uniqueCourses = studentsFlatMap.filter((course, index, originalArray) => {
+//   return originalArray.indexOf(course) === index
+// })
+
+// console.log(studentsFlatMap)
+// console.log(uniqueCourses)
+
+// const values = [5, 2342, -345, 121, 6546, 0, 82];
+
+// const moreThanOneHundred = values.filter(value => value > 100)
+// // const lessThanOneHundred = values.filter(value => value < 100)
+
+// console.log(moreThanOneHundred)
+// console.log(lessThanOneHundred)
+// console.log(values)
+
+// const colorPickerOptions = [
+//   { label: "red", color: "#F44336" },
+//   { label: "green", color: "#4CAF50" },
+//   { label: "blue", color: "#2196F3" },
+//   { label: "pink", color: "#E91E63" },
+//   { label: "indigo", color: "#3F51B5" },
+// ];
+
+// console.log(colorPickerOptions.find(option => option.label === 'indigo'))
+// console.log(colorPickerOptions.find(option => option.color === '#2196F3' && option.label === 'blue'))
+// console.log(colorPickerOptions.find(option => option.label === 'oxdifhbodisfg'))
+
+// console.log(colorPickerOptions.findIndex(option => option.label === 'indigo'))
+// console.log(colorPickerOptions.findIndex(option => option.color === '#2196F3' && option.label === 'blue'))
+// console.log(colorPickerOptions.findIndex(option => option.label === 'oxdifhbodisfg'))
+
+// const isAlwaysTrue = true;
+// const numbers = [1, 2, 3, -10, 12, 89456, 5]
+
+// const everyPositive = numbers.every(value => value >= 0 && isAlwaysTrue) // &&
+// const somePositive = numbers.some(value => value >= 0 && isAlwaysTrue) // ||
+
+// const everyNumber = numbers.some(value => {
+//   console.log(value)
+//   const multiValue = value * 43;
+//   if (multiValue > 716) {
+//     return true
+//   }
+
+//   return false
+// })
+
+// console.log(everyPositive, somePositive, everyNumber)
+
+// const numbers = [10, 2, 3, 4, 5]
+// const initialValue = 3
+
+// const total = numbers.reduce((prevValue, number) => {
+//   console.log({prevValue, number})
+//   return prevValue + number;
+// });
+
+// const totalWithInit = numbers.reduce((prevValue, number) => {
+//   console.log({prevValue, number})
+//   return prevValue + number;
+// }, 0);
+
+// console.log(total, totalWithInit)
+
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+
+// const likes = tweets.map(tweet => tweet.likes)
+// let result = 0
+
+// for(let i = 0; i < likes.length; i++) {
+//   result += likes[i];
+// }
+
+// console.log(result)
+
+// const likesReduce = tweets.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
+
+// console.log(likesReduce)
+
+// // ----
+
+// const getTags = tweets => {
+//   return tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags)
+
+//     return allTags;
+//   }, []);
+// }
+
+// const getTagStats = (acc, tag) => {
+//   if(!acc.hasOwnProperty(tag)) {
+//     acc[tag] = 0;
+//   }
+
+//   acc[tag] += 1;
+
+//   console.log(acc)
+
+//   return acc;
+// }
+
+// const tags = getTags(tweets)
+// const tagsCount = tags.reduce(getTagStats, {})
+
+// console.log(tags)
+// console.log(tagsCount)
+
+// const scores = [61, 19, 74, 38, 29, 10, 5, 1, 63]
+// const students = ["Bgal", "Mariusz", "Artur", "Bartek", "Wojciech"]
+
+// const sorted = [...students].sort()
+
+// console.log(students)
+// console.log(sorted)
+
+// const ascedingScores = [...scores].sort((a, b) => a - b)
+// const descendingScores = [...scores].sort((a, b) => b - a)
+
+// console.log(ascedingScores)
+// console.log(descendingScores)
+
+const students = [
+  { name: "Mango", score: 83, courses: ["matematyka", "fizyka"] },
+  { name: "Poly", score: 59, courses: ["informatyka", "fizyka"] },
+  { name: "Ajax", score: 37, courses: ["matematyka", "biologia"] },
+  { name: "Kiwi", score: 94, courses: ["polski"] },
+];
+
+
+const passedNames = students
+  .map((student) => {
+    if (student.score > 60) {
+      return student.name
+    }
+  })
+  .filter(x => x)
+  .map(name => name.toLowerCase())
+
+// const passedNamesFiltered = passedNames.filter(x => x)
+
+console.log(passedNames)
+
+const uniqueSortedCourses = students
+  .flatMap(student => student.courses)
+  .filter((course, index, array) => array.indexOf(course) === index)
+  .sort((a, b) => a.localeCompare(b));
+
+console.log(uniqueSortedCourses)
