@@ -1,252 +1,62 @@
-// const obj = {
-//   foo() {
-//     console.log(this);
-//   }
-// }
+// console.log(document)
 
-// obj.foo()
+// const body = document.body
+// console.log(body)
 
-// const foo = () => console.log(this)
+// const list = document.querySelector('.list')
+// // const list = body.querySelector('.list')
+// console.log(list)
 
-// foo()
+// const first = list.firstElementChild
+// console.log(first)
 
-// const obj1 = {
-//   foo() {
-//     console.log(this)
-//   }
-// }
+// const last = list.lastElementChild
+// console.log(last)
 
-// function foo() {
-//   console.log(this)
-// }
+// const children = list.children
+// console.log(children[3])
 
-// const obj2 = {
-//   foo: foo
-// }
+// const items = document.querySelectorAll('.item')
+// console.log(items)
 
-// obj1.foo()
-// obj2.foo()
+// const image = document.querySelector('.image')
+// console.log(image)
+// console.log(image.alt)
+// image.src = 'https://picsum.photos/id/13/640/480'
 
-// const obj = {
-//   foo: () => console.log(this)
-// }
+// const text = document.querySelector('.hello')
+// console.log(text)
+// console.log(text.innerHTML)
+// console.log(text.textContent)
 
-// obj.foo()
+// text.textContent = '<h1>Ala ma kota, a kot ma Alę</h1>'
+// // text.innerHTML = '<h1>Ala ma kota, a kot ma Alę</h1>'
 
-// const hotel = {
-//   username: 'Resort',
-//   showThis() {
-//     const foo = () => console.log(this)
-//     foo()
-//   }
-// }
+// const container = document.querySelector('.container')
+// console.log(container)
+// console.log(container.innerHTML)
 
-// hotel.showThis()
+// const link = document.querySelector('.link')
 
-// const name = 'Mateusz'
-// const nickname = 'Daria_m'
-// const currency = 'PLN'
-// const iWantToHaveAHouseOnMaledivesToday = true
-// const hotel = 5;
+// console.log(link.classList)
 
-// const foo = (arg) => console.log(arg);
+// const image = document.querySelector('.image')
 
-// const getInfo = (name, nickname, currency, isTrue) => {
-//   console.log(`${name} - ${nickname} - ${currency}`)
-// }
+// console.log(image.attributes)
 
-// getInfo(name, nickname, currency)
+// const head = document.createElement("h3")
+// head.textContent = 'Hello from Torun'
 
-// // -----
+// const hello = document.querySelector('.hello')
+// // hello.append(head)
+// // hello.prepend(head)
+// hello.after(head)
 
-// const user = {
-//   name: 'Mateusz',
-//   nickname: 'Daria_m',
-//   currency: 'PLN',
-//   hotel: 5,
+// head.remove()
+// hello.remove()
 
-//   getInfo() {
-//     console.log(`${this.name} - ${this.nickname} - ${this.currency}`)
-//   }
-// }
+const head = '<h3>Hello from Torun!</h3>'
 
-// // user.getInfo()
+const hello = document.querySelector('.hello')
+hello.insertAdjacentHTML('beforeend', head)
 
-// const anotherUser = Object.create(user);
-// anotherUser.bankAmount = 1000;
-
-// // console.log(user)
-// // console.log(anotherUser)
-
-// const animal = {
-//   legs: 4,
-// }
-
-// const mammal = Object.create(animal)
-// mammal.isMammal = true;
-
-// const dog = Object.create(mammal)
-// dog.woof = () => console.log('woof')
-
-// console.log(dog)
-
-class User {
-  #username = 'Marcin'
-  age = 21
-  isAlive = true
-
-  constructor({ username, age }) {
-    this.#username = username;
-    this.age = age;
-
-    // if (age) {
-    //   this.age = age;
-    // }
-
-    this.age = age || this.age
-  }
-
-  getUsername = () => {
-    return this.#username;
-  }
-
-  getUsernameAndAge = () => {
-    this.#setUsername()
-    return `Hey, tutaj ${this.#username}, mam ${this.age} lat. Witam!`
-  }
-
-  #setUsername = (user) => {
-    // Request na backend do sprawdzenia czy taki user istnieje
-    this.#username = user;
-  }
-
-  sayHello = () => {
-    console.log('Hello')
-  }
-}
-
-const firstUser = new User({
-  username: 'Mariusz', 
-  age: 32
-})
-
-const secondUser = new User({
-  username: 'Wojciech',
-})
-
-// firstUser.#username = 'Tomasz'
-// firstUser.#setUsername('Arkadiusz')
-
-// console.log(firstUser.getUsernameAndAge())
-// console.log(firstUser.getUsername())
-// console.log(firstUser.#username)
-
-// const user1 = new User();
-// const marcinUser = new User();
-// const marcinUser = {
-//   username: 'Marcin',
-
-//   sayHello() {
-//     console.log('Hello')
-//   }
-// }
-
-// console.log(user1)
-// console.log(marcinUser)
-
-// user1.sayHello()
-// console.log(marcinUser.username)
-
-// class Person {
-//   #email;
-//   static Roles = {
-//     ADMIN: 'admin',
-//     USER: 'user',
-//   }
-//   static #takenEmails = [];
-
-//   static isEmailTaken(email) {
-//     // return `This is ${this.email}, hello to ${email}`
-//     return Person.#takenEmails.includes(email)
-//   }
-
-//   constructor({ email }) {
-//     this.#email = email;
-//     Person.#takenEmails.push(email)
-//   }
-//   get email() {
-//     return this.#email
-//   }
-//   set email(newEmail) {
-//     if (newEmail.indexOf('@') > -1) {
-//       this.#email = newEmail
-//     } else {
-//       console.log('lol nope')
-//     }
-//   }
-// }
-
-// const person = new Person({
-//   email: 'adrian@goit.pl'
-// });
-// console.log(Person.isEmailTaken('adrian@gmail.com'))
-// console.log(Person.isEmailTaken('adrian@goit.pl'))
-
-// person.email = 'abba'
-// person.email = 'abba@gmail.com'
-
-// Person.Roles.USER = 5
-
-// console.log(person.#email)
-// console.log(person)
-// console.log(person.email)
-// console.log(Person.Roles.USER)
-
-// console.log()
-
-class Animal {
-  legs
-  #private1 = 1
-
-  constructor({legs}) {
-    this.legs = legs
-  }
-}
-
-class Dog extends Animal {
-  #private2 = 2
-  // woof = () => console.log('woof')
-
-  woof() {
-    console.log('woof')
-  }
-
-  constructor({ legs }) {
-    super( { legs } )
-  }
-}
-
-class Corgi extends Dog {
-  #private3 = 3
-  isAwesome = true;
-  age;
-
-  woof = () => {
-    console.log(('not-woof'))
-    super.woof()
-  }
-
-  constructor({ legs, age }) {
-    super({legs})
-    this.age = age
-    // this.legs = legs
-    this.woof()
-    // console.log(this.#private3)
-  }
-}
-
-const animal = new Animal({ legs: 8 })
-// console.log(animal)
-
-const corgi = new Corgi({ legs: 4, age: 15})
-console.log(corgi)
