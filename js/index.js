@@ -1,62 +1,118 @@
-// console.log(document)
-
-// const body = document.body
-// console.log(body)
-
-// const list = document.querySelector('.list')
-// // const list = body.querySelector('.list')
-// console.log(list)
-
-// const first = list.firstElementChild
-// console.log(first)
-
-// const last = list.lastElementChild
-// console.log(last)
-
-// const children = list.children
-// console.log(children[3])
-
-// const items = document.querySelectorAll('.item')
-// console.log(items)
-
-// const image = document.querySelector('.image')
-// console.log(image)
-// console.log(image.alt)
-// image.src = 'https://picsum.photos/id/13/640/480'
-
-// const text = document.querySelector('.hello')
-// console.log(text)
-// console.log(text.innerHTML)
-// console.log(text.textContent)
-
-// text.textContent = '<h1>Ala ma kota, a kot ma Alę</h1>'
-// // text.innerHTML = '<h1>Ala ma kota, a kot ma Alę</h1>'
+// const title = document.createElement('h2')
+// title.textContent = 'Hej, GoIT'
 
 // const container = document.querySelector('.container')
-// console.log(container)
-// console.log(container.innerHTML)
 
-// const link = document.querySelector('.link')
+// container.append(title)
+// // container.prepend(title)
+// // container.after(title)
+// // container.before(title)
 
-// console.log(link.classList)
+// const button = document.querySelector('.button');
 
-// const image = document.querySelector('.image')
+// button.addEventListener(
+    //event -> click, mouseup, keyboarddown, keyboardup
+    //handler -> callback
+    //options -> opcje dla naszego listenera
+// )
 
-// console.log(image.attributes)
+// const handleClick = () => {
+//     console.log('button clicked!')
+// }
 
-// const head = document.createElement("h3")
-// head.textContent = 'Hello from Torun'
+// const secondHandleClick = () => {
+//     console.log('button clicked once more!')
+//     button.removeEventListener('click', handleClick)
+// }
 
-// const hello = document.querySelector('.hello')
-// // hello.append(head)
-// // hello.prepend(head)
-// hello.after(head)
+// button.addEventListener('click', handleClick)
+// button.addEventListener('click', secondHandleClick)
 
-// head.remove()
-// hello.remove()
+// this
 
-const head = '<h3>Hello from Torun!</h3>'
+// const mango = {
+//     username: "mango",
+//     showUsername() {
+//         console.log(this)
+//         console.log(`My username is ${this.username}`)
+//     }
+// }
 
-const hello = document.querySelector('.hello')
-hello.insertAdjacentHTML('beforeend', head)
+// mango.showUsername();
 
+// button.addEventListener("click", mango.showUsername.bind(mango))
+
+// const button = document.querySelector('.button');
+
+// const handleClick = (event) => {
+//     console.log('clicked!')
+//     console.log(event.currentTarget)
+// }
+
+// // e, ev, evt, event
+// // button.addEventListener('click', (event) => handleClick(event))
+// button.addEventListener('click', handleClick)
+// button.addEventListener('mousedown', handleClick)
+
+// const form = document.querySelector('.register-form')
+
+// form.addEventListener('submit', (event) => {
+//     event.preventDefault()
+//     // console.log(event.currentTarget.elements)
+//     const {
+//         elements: { username, email }
+//     } = event.currentTarget;
+
+//     console.log(username.value, email.value)
+// })
+
+// const handleClick = (event) => {
+//     console.log({event})
+// }
+
+// document.addEventListener('keydown', handleClick) // <- it's good!
+
+// document.addEventListener('keyup', handleClick)
+
+// document.addEventListener('keydown', event => {
+//     event.preventDefault()
+
+//     console.log(event.code)
+
+//     //event.keyCode
+
+//     if(event.ctrlKey && event.code === 'KeyP') {
+//         console.log('print!')
+//     }
+// })
+
+const textOutput = document.querySelector('.text-output')
+const valueOutput = document.querySelector('.value-output')
+const select = document.querySelector('.pizza-select')
+
+select.addEventListener('change', event => {
+    const currentTarget = event.currentTarget;
+    const { value, selectedIndex, options } = currentTarget;
+    const text = options[selectedIndex].text
+
+    console.log({value, selectedIndex, options})
+
+    valueOutput.textContent = value;
+    textOutput.textContent = text;
+})
+
+const textInput = document.querySelector('.text-input')
+const textInputOutput = document.querySelector('.output');
+
+textInput.addEventListener('input', event => {
+    const value = event.currentTarget.value;
+
+    if (value.length < 8) {
+        textInputOutput.textContent = "minimum 8 znaków!"
+    } else {
+        textInputOutput.textContent = value;
+    }
+    
+})
+
+//document.activeElement
