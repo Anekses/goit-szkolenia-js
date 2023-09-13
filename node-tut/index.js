@@ -1,22 +1,14 @@
-// import { hello, goodbye } from "./greeter.js"
-// import * as greeter from './greeter.js';
-// import add from './calc.js';
+// const a = 5;
+// const b = 'abba'
+// const c = true;
+// const d = [1, 2, 3, 4]
+// const e = { a: 1, b: 2 }
 
-const add = require('./calc')
+// const JSON = 'JavaScript Object Notation'
 
-// console.log(greeter.hello())
-console.log(add(5, 10))
-// console.log(greeter.goodbye())
+// const eJson = JSON.stringify(e);
 
+// console.log(eJson)
 
-// const validator = require('validator');
-
-// const validateEmail = email => {
-//     return validator.isEmail(email)
-// }
-
-// console.log(validateEmail('adrian.rydzynski@gmail.com'))
-// console.log(validateEmail('notrealone.com'))
-
-
-
+// const a = 
+// cost abba = {
