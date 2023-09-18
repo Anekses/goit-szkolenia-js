@@ -91,13 +91,13 @@
 
 const date = new Date()
 
-// setInterval(() => {
-//     console.timeEnd('start')
-//     // console.clear()
+setInterval(() => {
+    console.timeEnd('start')
+    // console.clear()
 
-//     // date.setTime(date.getTime() + 1000)
-//     // console.log(date.toLocaleString())
+    // date.setTime(date.getTime() + 1000)
+    // console.log(date.toLocaleString())
 
-//     console.log(new Date().toLocaleString())   
-//     console.time('start')
-// }, 1000)
+    console.log(new Date().toLocaleString())   
+    console.time('start')
+}, 1000)
