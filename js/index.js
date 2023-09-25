@@ -1,185 +1,113 @@
-// setTimeout(() => console.log("A"), 2000)
+// console.log("A")
 
-// console.log("B")
+// setTimeout(() => console.log("B"), 0)
 
-// setTimeout(() => console.log("C"), 1500)
+// const promise = new Promise(resolve => {
+//   resolve("C")
+// })
+
+// promise.then(value => console.log(value))
 
 // console.log("D")
 
 // console.log("A")
 
-// setTimeout(() => console.log("B"), 0)
+// Promise.resolve("B")
+//   .then((value) => console.log(value))
+//   .catch(() => console.log("C"))
+//   .finally(() => console.log("D"))
 
-// console.log("C")
-
-// setInterval (2000) -> 2000, 4000 ->
-// clearInterval 5000
-
-// for (let i = 3; i > 0; i--) {
-//     const delay = i * 1000; // 3000, 2000, 1000
-//     setTimeout(() => console.log(i), delay) // 3, 2, 1
-// }
-
-// setTimeout(() => {
-//     console.log(3)
-// }, 3000)
-
-// setTimeout(() => {
-//     console.log(2)
-// }, 2000)
-
-// setTimeout(() => {
-//     console.log(1)
-// }, 1000)
-
-// const date = new Date() // aktualna data
-// const date1 = new Date('2023-09-20')
-
-// const date = new Date('2030-08-23')
-// console.log(date.getMonth()) // [Monday, Tuesday, ...]
-
-// const isSuccess = true;
+// console.log("E")
 
 // const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         if (isSuccess) {
-//             resolve('Yey, it works')
-//         } else {
-//             reject('Not working, error')
-//         }
-//     }, 3000)
+//   reject("whoops")
 // })
 
-// console.log('Promise prepared, wait for then!')
+// promise.then(...).catch
 
-// const fullfiled = (value) => {
-//     console.log('fulfilled!')
-//     console.log(value)
-//     // return new Promise()
-// }
-
-// const reject = (error) => {
-//     console.log('error!')
-//     console.log(error)
-// }
-
-// const finallyFunc = () => {
-//     console.log('finally!')
-// }
+// const promise = new Promise((resolve) => {
+//   resolve(10);
+// })
 
 // promise
-//     .then(fullfiled)
-//     .then(() => console.log('then'))
-//     .catch(reject)
-//     .finally(finallyFunc)
-
-
-
-// const promiseCalc = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve(5)
-//     }, 1000)
-// })
-
-// promiseCalc
-//     .then(value => {
-//         console.log('start')
-//         console.log(value)
-//         return value * 2;
+//   .then(value => {
+//     new Promise(resolve => {
+//       resolve(value * 2)
 //     })
-//     .then(value => {
-//         console.log(value)
-//         return value * 2;
-//     })
-//     .then(value => {
-//         console.log(value)
-//         return value * 2;
-//     })
-//     .then(value => {
-//         console.log(value)
-//     })
-//     .catch(() => {})
-//     .finally(() => {
-//         console.log('the end')
-//     })
+//   })
+//   .then(value => console.log(value))
 
-// const fetchUserFromServer = (username) => {
-//     return new Promise((resolve, reject) => {
-//         console.log(`Fetching data for ${username}`)
+// http -> https
 
-//         setTimeout(() => {
-//             const isSuccess = true;
+// REST API -> 
 
-//             if (isSuccess) {
-//                 resolve('success value') -> Promise.resolve(...)
-//             } else {
-//                 reject('error')
-//             }
-//         }, 2000)
-//     })
-// }
+// CRUD ->
+//   Create
+//   Read
+//   Update
+//   Delete
 
-// const onFetchSuccess = value => {
-//     console.log(value);
-// }
-
-// const onFetchError = error => {
-//     console.log(error)
-// }
-
-// fetchUserFromServer('Piotr')
-//     .then(onFetchSuccess)
-//     .then(() => console.log('i am here'))
-//     .catch(onFetchError)
-//     .finally(() => console.log('finally'))
-
-// const makePromise = (text, delay) => {
-//     return new Promise((resolve) => {
-//         setTimeout(() => resolve(text), delay)
-//     })
-// }
-
-// const promiseA = makePromise('promiseA', 3000)
-// const promiseB = makePromise('promiseB', 1000)
-
-// promiseA.then((value) => console.log(value))
-// promiseB.then((value) => console.log(value))
-
-// console.log('----------------------')
-
-// Promise.all([promiseA, promiseB])
-//     .then((value) => {
-//         console.log(value)
-//     })
-
-// Promise.race([promiseA, promiseB])
-//     .then((value) => {
-//         console.log(value)
-//     })
-
-new Promise(resolve => resolve('its good'))
-    .then((value) => console.log(value))
-
-Promise.resolve('success value')
-    .then((value) => console.log(value))
+// GET -> pobierz
+// POST -> stwórz
+// PUT -> jeśli nie ma to stwórz, jeśli jest to modyfikuj
+// PATCH -> jeśli nie ma to nic, jeśli jest to modyfikuj
+// DELETE -> usuń
 
 
-// index.js
-// index.css
+// POST <Nagłówki> www.interia.pl/api/articles { title: 'goit', text: 'hej'}
 
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-import './index.css';
+// 1. Metoda HTTP
+// 2. Nagłówki HTTP
+// 3. Ścieżka
+// 4. Ciało -> body
 
+// 1XX - info
+// 2XX - success
+// 3XX - redirect
+// 4XX - client error
+// 5XX - server error
+
+const baseUrl = 'https://jsonplaceholder.typicode.com'
+const path = '/users';
+const params = '?_limit=8&_sort=name'
+
+const searchParams = new URLSearchParams({
+  _limit: 8,
+  sort: 'name',
+  // page: 
+})
+
+// console.log(searchParams.toString())
+
+const headers = new Headers({
+  "Content-Type": "application/json"
+})
+
+headers.append("X-Custom-Header", "value")
+console.log(headers.has("Content-Type"))
+
+// const comments = '/comments';
+const url = `${baseUrl}${path}?${searchParams}`
 const options = {
-    enableTime: true,
-    time_24hr: true,
-    defaultDate: new Date(),
-    minuteIncrement: 1,
-    onClose(selectedDates) {
-      console.log(selectedDates[0]);
-    },
-  };
-  
+  headers,
+};
 
-flatpickr('#datetime-picker', options)
+fetch(url, options)
+  .then(response => {
+    if(!response.ok) {
+      throw new Error(response.status)
+    }
+
+    return response.json()
+    // return response.body
+  })
+  .then(data => {
+    console.log(data)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+
+
+//wp.pl/users -> wp.pl/api
+//Origin: htpps://wp.pl
