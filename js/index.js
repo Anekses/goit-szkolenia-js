@@ -1,113 +1,107 @@
-// console.log("A")
+// CRUD
 
-// setTimeout(() => console.log("B"), 0)
+// Create   -> POST
+// Read     -> GET  -> getOne / getList
+// Update   -> PUT / PATCH
+// Delete   -> DELETE
 
-// const promise = new Promise(resolve => {
-//   resolve("C")
-// })
+const baseUrl = `https://jsonplaceholder.typicode.com/posts`;
 
-// promise.then(value => console.log(value))
+// GET -> getList
+fetch(baseUrl)
+  .then(response => response.json())
+  // .then(posts => console.log(posts))
+  .catch(error => console.log(error))
 
-// console.log("D")
+// GET -> getOne / getById
+const postId = 40;
 
-// console.log("A")
+fetch(`${baseUrl}/${postId}`)
+  .then(response => response.json())
+  // .then(post => console.log(post))
+  .catch(error => console.log(error))
 
-// Promise.resolve("B")
-//   .then((value) => console.log(value))
-//   .catch(() => console.log("C"))
-//   .finally(() => console.log("D"))
+// POST
+const postBody = {
+  title: 'foo',
+  body: 'bar',
+  userId: 5,
+  author: 'Woj'
+}
 
-// console.log("E")
+const postOptions = {
+  method: 'POST',
+  body: JSON.stringify(postBody),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  }
+}
 
-// const promise = new Promise((resolve, reject) => {
-//   reject("whoops")
-// })
+fetch(baseUrl, postOptions)
+  .then(response => response.json())
+  // .then(post => console.log(post))
+  .catch(error => console.log(error))
 
-// promise.then(...).catch
+// PUT
+const putId = 5;
+const putBody = {
+  id: putId,
+  abba: 'This is new body!'
+}
 
-// const promise = new Promise((resolve) => {
-//   resolve(10);
-// })
+const putOptions = {
+  method: 'PUT',
+  body: JSON.stringify(putBody),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  }
+}
 
-// promise
-//   .then(value => {
-//     new Promise(resolve => {
-//       resolve(value * 2)
-//     })
-//   })
-//   .then(value => console.log(value))
+fetch(`${baseUrl}/${putId}`, putOptions)
+  .then(response => response.json())
+  .then(post => console.log(post))
+  // .then(() => {
+  //   fetch(`${baseUrl}/${putId}`)
+  //     .then(response => response.json())
+  //     .then(post => console.log(post))
+  //     .catch(error => console.log(error))
+  // })
+  .catch(error => console.log(error))
 
-// http -> https
+// PATCH
+const patchId = 10;
+const patchBody = {
+  id: patchId,
+  body: 'This is new body!'
+}
 
-// REST API -> 
+const patchOptions = {
+  method: 'PATCH',
+  body: JSON.stringify(patchBody),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  }
+}
 
-// CRUD ->
-//   Create
-//   Read
-//   Update
-//   Delete
+fetch(`${baseUrl}/${patchId}`, patchOptions)
+  .then(response => response.json())
+  .then(post => console.log(post))
+  // .then(() => {
+  //   fetch(`${baseUrl}/${patchId}`)
+  //     .then(response => response.json())
+  //     .then(post => console.log(post))
+  //     .catch(error => console.log(error))
+  // })
+  .catch(error => console.log(error))
 
-// GET -> pobierz
-// POST -> stwórz
-// PUT -> jeśli nie ma to stwórz, jeśli jest to modyfikuj
-// PATCH -> jeśli nie ma to nic, jeśli jest to modyfikuj
-// DELETE -> usuń
+// DELETE
 
+const deleteId = 12;
 
-// POST <Nagłówki> www.interia.pl/api/articles { title: 'goit', text: 'hej'}
+const deleteOptions = {
+  method: 'DELETE'
+}
 
-// 1. Metoda HTTP
-// 2. Nagłówki HTTP
-// 3. Ścieżka
-// 4. Ciało -> body
-
-// 1XX - info
-// 2XX - success
-// 3XX - redirect
-// 4XX - client error
-// 5XX - server error
-
-const baseUrl = 'https://jsonplaceholder.typicode.com'
-const path = '/users';
-const params = '?_limit=8&_sort=name'
-
-const searchParams = new URLSearchParams({
-  _limit: 8,
-  sort: 'name',
-  // page: 
-})
-
-// console.log(searchParams.toString())
-
-const headers = new Headers({
-  "Content-Type": "application/json"
-})
-
-headers.append("X-Custom-Header", "value")
-console.log(headers.has("Content-Type"))
-
-// const comments = '/comments';
-const url = `${baseUrl}${path}?${searchParams}`
-const options = {
-  headers,
-};
-
-fetch(url, options)
-  .then(response => {
-    if(!response.ok) {
-      throw new Error(response.status)
-    }
-
-    return response.json()
-    // return response.body
-  })
-  .then(data => {
-    console.log(data)
-  })
-  .catch(error => {
-    console.log(error)
-  })
-
-
-//wp.pl/users -> wp.pl/api
-//Origin: htpps://wp.pl
+fetch(`${baseUrl}/${deleteId}`, deleteOptions)
+  .then(() => console.log('Post deleted'))
+  .catch(error => console.log(error))
